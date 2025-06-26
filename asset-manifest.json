@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/tinikohouse/static/css/main.31d6cfe0.css",
-    "main.js": "/tinikohouse/static/js/main.af5c6377.js",
-    "index.html": "/tinikohouse/index.html",
-    "main.af5c6377.js.map": "/tinikohouse/static/js/main.af5c6377.js.map"
+    "main.css": "/static/css/main.31d6cfe0.css",
+    "main.js": "/static/js/main.af5c6377.js",
+    "index.html": "/index.html",
+    "main.af5c6377.js.map": "/static/js/main.af5c6377.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
