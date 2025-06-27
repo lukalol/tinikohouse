@@ -150,10 +150,10 @@ const TinikoGuestHouse = () => {
   const rooms = [
     { id: 1, number: 1, floor: 1, capacity: 4, amenities: ['wifi', 'aircon', 'tv'] },
     { id: 2, number: 2, floor: 1, capacity: 4, amenities: ['wifi', 'bathroom', 'aircon', 'tv', 'miniFridge'] },
-    { id: 3, number: 3, floor: 2, capacity: 3, amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge'] }, 
-    { id: 4, number: 4, floor: 2, capacity: 5, amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge'] },
+    { id: 3, number: 3, floor: 2, capacity: '3-4', amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge'] }, 
+    { id: 4, number: 4, floor: 2, capacity: '4-5', amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge'] },
     { id: 5, number: 5, floor: 2, capacity: 2, amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge', 'seaside'] },
-    { id: 6, number: 6, floor: 2, capacity: 4, amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge', 'seaside'] } 
+    { id: 6, number: 6, floor: 2, capacity: '4', amenities: ['wifi', 'bathroom', 'balcony', 'aircon', 'tv', 'miniFridge', 'seaside'] } 
   ];
 
   const languages = [
