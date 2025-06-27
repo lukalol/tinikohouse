@@ -13,28 +13,33 @@ const TinikoGuestHouse = () => {
 
   
   const galleryImages = [
-  'img/gal/front_1.png',
-  'img/gal/back_1.jpg',
-  'img/gal/front.jpg',  
-  'img/gal/back.jpg'    
+  'img/gal/front.jpg',
+  'img/gal/yard.jpg',
+  'img/gal/kitchen.jpg',  
+  'img/gal/plants.jpg' ,  
+  'img/gal/inside.jpg' ,
+  'img/gal/sea.jpg'  
 ];
 
   // Sample room images
    const roomImageSets = {
     1: [
       'img/1/1_1.jpg',
-      'img/1/1_2.jpg'
+      'img/1/1_2.jpg',
+      'img/1/1_3.jpg'
       
     ],
     2: [
       'img/2/2_1.jpg',
       'img/2/2_2.jpg',
-      'img/2/2_3.png'
+      'img/2/2_3.jpg',
+      'img/2/2_4.jpg',
     ],
     3: [
       'img/3/3_1.jpg',
       'img/3/3_2.jpg',
-      'img/3/3_3.jpg'
+      'img/3/3_4.jpg',
+      'img/3/3_5.jpg'
     ],
     4: [
       'img/4/4_1.jpg',
@@ -46,7 +51,8 @@ const TinikoGuestHouse = () => {
     5: [
       'img/5/5_1.jpg',
       'img/5/5_2.jpg',
-      'img/5/5_3.jpg'
+      'img/5/5_3.jpg',
+      'img/5/5_4.jpg'
     ],
     6: [
       'img/6/6_1.jpg',
@@ -55,7 +61,7 @@ const TinikoGuestHouse = () => {
     ]
   };
 
-  const translations = {
+   const translations = {
     en: {
       rooms: 'Rooms',
       map: 'Map',
@@ -81,7 +87,8 @@ const TinikoGuestHouse = () => {
       address: 'Takaishvili Street 87, Ureki',
       phone: 'Phone',
       email: 'Email',
-      closePhotos: 'Close Photos'
+      closePhotos: 'Close Photos',
+      whatsapp: 'WhatsApp'
     },
     ka: {
       rooms: 'ოთახები',
@@ -108,7 +115,8 @@ const TinikoGuestHouse = () => {
       address: 'თაყაიშვილი ქუჩა 87, ურეკი',
       phone: 'ტელეფონი',
       email: 'ელ-ფოსტა',
-      closePhotos: 'ფოტოების დახურვა'
+      closePhotos: 'ფოტოების დახურვა',
+      whatsapp: 'WhatsApp'
     },
     ru: {
       rooms: 'Номера',
@@ -135,7 +143,8 @@ const TinikoGuestHouse = () => {
       address: 'Улица Такаишвили 87, Уреки',
       phone: 'Телефон',
       email: 'Эл. почта',
-      closePhotos: 'Закрыть фото'
+      closePhotos: 'Закрыть фото',
+      whatsapp: 'WhatsApp'
     }
   };
   const rooms = [
@@ -538,71 +547,96 @@ const TinikoGuestHouse = () => {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-zinc-900 text-white py-12">
+      <footer id="contact" className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
             
-           
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             
-            {/* Contact Information */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4">{t.contactTitle}</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-300">{t.address}</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-gray-400" />
-                    <div className="text-gray-300">
-                      <div className="flex items-center space-x-2">
-                        <span>+995 593-49-48-52</span>
-                        <span className="text-green-400 text-sm">📱 WhatsApp</span>
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        {currentLanguage === 'ka' ? 'ლელა' : currentLanguage === 'ru' ? 'Лела' : 'Lela'}
-                      </div>
-                    </div>
+            {/* Address */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-gray-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">ADDRESS</h3>
+              <p className="text-gray-600">{t.address}</p>
+            </div>
+            
+            {/* Phone */}
+           <div className="text-center">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-8 h-8 text-gray-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">PHONE</h3>
+              <div className="space-y-2 text-gray-600">
+                <div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span>+995 593-49-48-52</span>
+                    <a 
+                      href="https://wa.me/995593494852" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600 transition-colors"
+                    >
+                      {t.whatsapp}
+                    </a>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-gray-400" />
-                    <div className="text-gray-300">
-                      <div>+995 591-11-41-01</div>
-                      <div className="text-sm text-gray-400">
-                        {currentLanguage === 'ka' ? 'მიხეილ' : currentLanguage === 'ru' ? 'Михаил' : 'Mikheil'}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-gray-400" />
-                    <div className="text-gray-300">
-                      <div className="flex items-center space-x-2">
-                        <span>+995 571-11-64-47</span>
-                        <span className="text-green-400 text-sm">📱 WhatsApp</span>
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        {currentLanguage === 'ka' ? 'ლუკა' : currentLanguage === 'ru' ? 'Лука' : 'Luka'}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-gray-400" />
-                    <div className="text-gray-300">
-                      <div>+995 511-45-35-44</div>
-                      <div className="text-sm text-gray-400">
-                        {currentLanguage === 'ka' ? 'დემეტრე' : currentLanguage === 'ru' ? 'Дмитрий' : 'Dimitri'}
-                      </div>
-                    </div>
+                  <div className="text-sm text-gray-500">
+                    {currentLanguage === 'ka' ? 'ლელა' : currentLanguage === 'ru' ? 'Лела' : 'Lela'}
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-300">tinikohouse@gmail.com</span>
+                <div>
+                  <div>+995 591-11-41-01</div>
+                  <div className="text-sm text-gray-500">
+                    {currentLanguage === 'ka' ? 'მიხეილ' : currentLanguage === 'ru' ? 'Михаил' : 'Mikheil'}
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span>+995 571-11-64-47</span>
+                    <a 
+                      href="https://wa.me/995571116447" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600 transition-colors"
+                    >
+                      {t.whatsapp}
+                    </a>
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {currentLanguage === 'ka' ? 'ლუკა' : currentLanguage === 'ru' ? 'Лука' : 'Luka'}
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span>+995 511-45-35-44</span>
+                    <a 
+                      href="https://wa.me/995511453544" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600 transition-colors"
+                    >
+                      {t.whatsapp}
+                    </a>
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {currentLanguage === 'ka' ? 'დემეტრე' : currentLanguage === 'ru' ? 'Дмитрий' : 'Dimitri'}
+                  </div>
                 </div>
               </div>
             </div>
             
+            {/* Email */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-8 h-8 text-gray-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">EMAIL</h3>
+              <p className="text-gray-600">tinikohouse@gmail.com</p>
+            </div>
             
           </div>
         </div>
